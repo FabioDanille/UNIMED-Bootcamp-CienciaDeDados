@@ -1,0 +1,23 @@
+""" TRATANDO VALORES FALTANTES """
+## Consultando linhas com valores faltantes
+print(df.isnull().sum)
+print(df.mean())
+
+print()
+## Substituindo os valores nulos pela média
+# df["Valor da Venda"].fillna(df["Valor da Venda"].mean(), inplace=True) # vai substituir valores nulos pela média
+# print(df.isnull().sum)
+# print(df.mean())
+
+## Substituindo valores nulos por 0
+# df["Valor da Venda"].fillna(0, inplace=True) # vai substituir por 0
+# print(df.mean())
+
+## Apagando as linhas com valores nulos
+# df.dropna(inplace=True)
+
+## Apagando as linhas com valores nulos com base apenas em 1 coluna
+# df.dropna(subset=["Valor da Venda"], inplace=True)
+
+## Removendo linhas que estejam com valores faltantes em todas as colunas
+# df.dropna(how="all", inplace=True)

@@ -1,0 +1,62 @@
+""" VISUALIZAÇÃO DE DADOS (GRÁFICOS) """
+#df["LojaID"].value_counts(ascending=False) # vai no conjunto de dados e verifica quantas linhas temos com a LojaID
+
+## Gráfico de barras
+#df["LojaID"].value_counts(ascending=False).plot.bar(); # Vai gerar o gráfico... faz parte da bibliteca pandas
+
+## Gráfico de barras horizontais
+#df["LojaID"].value_counts(ascending=True).plot.barh(); # Vai gerar o gráfico... faz parte da bibliteca pandas
+# obs: ascending = true fará que fique em ordem de maior para menor
+
+## Gráfico de pizza
+# df.groupby(df["Data"].dt.year)["Receita"].sum().plot.pie()
+
+## Total de vendas por cidade
+# df["Cidade"].value_counts()
+
+## Adicionando um título e alterando o nome dos eixos
+# import matplotlib.puplot as plt
+# df["Cidade"].value_counts().plot.bar(title="Total vendas por Cidade")
+# plt.xlabel("Cidade")
+# plt.ylabel("Total Vendas")
+
+
+## Alterando a cor
+# import matplotlib.puplot as plt
+# df["Cidade"].value_counts().plot.bar(title="Total vendas por Cidade", color="red")
+# plt.xlabel("Cidade")
+# plt.ylabel("Total Vendas")
+
+
+## Alterando o estilo
+# import matplotlib.puplot as plt
+# plt.style.use("ggplot")
+# df.groupby(df["mes_venda"])["Qtde"].sum().plot(title = "Total produtos vendidos x mês")
+# plt.xlabel("Mês")
+# plt.ylabel("Total Produtos Vendidos")
+# plt.legend()
+
+
+## Selecionando apenas as vendas de 2019
+# df_2019 = df[df["Ano_Venda"] == 2019]
+
+## Total produtos vendidos por mês
+# df_2019.groupby(df_2019["mes_venda"])["Qtde"].sum().plot(marker = "v")
+# plt.xlabel("Mês")
+# plx.ylabel("Total produtos Vendidos")
+# plt.legend()
+
+
+## Histograma
+# plt.hist(df["Qtde"], color="magenta");
+
+## Gráfico dispersão
+# plt.scatter(x=df_2019["dia_venda"], y = df_2019["Receita"]);
+
+## Salvando em png
+# df_2019.groupby(df_2019["mes_venda"]).["Qtde"].sum()plot(marker = "v")
+# plt.title("Quantidade de produtos vendidos x mês")
+# plx.xlabel("Mês")
+# plt.ylabel("Total Produtos Vendidos");
+# plt.legend()
+# plt.savefig("grafico QTDE x MES.png") # salvando arquivo

@@ -1,0 +1,23 @@
+""" CRIANDO COLUNAS - com base no excel da aula """
+## Exemplo criado com base na aula
+# df["Receita"] = df["Vendas"].mul(df["Qtde"]) 
+
+# df["Qtde"] = df ["Receita"] / df["Vendas"] # caminho inverso pra ver "Qtde"
+
+## Retornando a maior receita
+# df["Receita"].max()
+
+## Retornando a menor receita
+# df["Receita"].min()
+
+## nlargest
+# df.nlargest(3, "Receita") # top3 com base na coluna "Receita"
+
+## nsmallest
+# df.nlargest(3, "Receita") # top3 piores com base na coluna "Receita"
+
+## Agrupamento por cidade
+# df.groupby("Cidade")["Receita"].sum()
+
+## Ordenando o conjunto de dados
+# df.sort_values("Receita", ascending=False).head(10)
