@@ -1,4 +1,4 @@
-# [].append #############################
+# ().append #############################
 lista = []
 
 lista.append(1)
@@ -10,7 +10,7 @@ print()
 
 
 
-# [].clear #############################
+# ().clear #############################
 lista = [1, "Python", [40,30,20]]
 print(lista) # [1, "Python", [40,30,20]]
 lista.clear()
@@ -19,7 +19,7 @@ print()
 
 
 
-# [].copy #############################
+# ().copy #############################
 lista = [1, "Python", [40,30,20]]
 lista.copy()  # retorna a lista em outra instância, não sendo afetado por functions
 print(lista)
@@ -27,7 +27,7 @@ print()
 
 
 
-# [].count #############################
+# ().count #############################
 cores = ["vermelho", "azul", "verde", "azul"]
 
 cores.count("vermelho") # 1
@@ -37,7 +37,7 @@ print()
 
 
 
-# [].extend #############################
+# ().extend #############################
 linguagens = ["python", "js", "c"]
 
 print(linguagens) # ["python", "js", "c"]
@@ -49,7 +49,7 @@ print()
 
 
 
-# [].index #############################
+# ().index #############################
 linguagens = ["python", "js", "c", "java", "csharp"]
 
 linguagens.index("java") # 3 (mostra onde há o índice pela primera vez)
@@ -57,7 +57,7 @@ linguagens.index("python") # 0
 print()
 
 
-# [].pop #############################
+# ().pop #############################
 linguagens = ["python", "js", "c", "java", "csharp"]
 
 linguagens.pop() # csharp
@@ -66,7 +66,7 @@ linguagens.pop() # c
 linguagens.pop(0) # python
 
 
-# [].remove #############################
+# ().remove #############################
 linguagens = ["python", "js", "c", "java", "csharp"]
 
 linguagens.remove("c") # assim não manda o índice, e sim o objeto em si
@@ -74,7 +74,7 @@ print()
 
 
 
-# [].reverse #############################
+# ().reverse #############################
 linguagens = ["python", "js", "c", "java", "csharp"]
 
 linguagens.reverse()
@@ -84,7 +84,7 @@ print()
 
 
 
-# [].sort #############################
+# ().sort #############################
 
 # ordenando alfabeticamente
 linguagens = ["python", "js", "c", "java", "csharp"]
