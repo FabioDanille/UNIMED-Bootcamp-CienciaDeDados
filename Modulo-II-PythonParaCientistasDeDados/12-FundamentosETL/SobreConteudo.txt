@@ -1,0 +1,21 @@
+O pandas permite trabalhar com diferentes tipos de dados, por exemplo:
+
+-> Dados tabulares, como uma planilha Excel ou uma tabela SQL;
+-> Dados ordenados de modo temporal ou não;
+-> Matrizes;
+-> Qualquer outro conjunto de dados, que não necessariamente precisem estar rotulados
+
+
+Bibliotecas de exemplo:
+OpenCV
+Pillow
+scikit-image
+
+Estrutura de Dados
+-> Os dois principais objetos da biblioteca Pandas são as "Series" e os "DataFrames"
+-> Uma "Serie" é uma matriz unidimensional que contém uma sequência de valores que 
+    apresentam uma indexação (que podem ser numéricos inteiros ou rótulos), muito 
+    parecida com uma única coluna no Excel.
+-> O "DataFrame" é uma estrutura de dados tabular, semelhante a planilha de dados do
+    Excel, em que tanto as linhas quanto as colunas apresentam rótulos.
+

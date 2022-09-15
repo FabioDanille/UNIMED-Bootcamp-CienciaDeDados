@@ -1,0 +1,5 @@
+# Baixar framework no terminal -> pip install luigi
+
+# É uma interface gráfica que auxilia no ETL.. apesar de não ser feita pra ETL
+
+
