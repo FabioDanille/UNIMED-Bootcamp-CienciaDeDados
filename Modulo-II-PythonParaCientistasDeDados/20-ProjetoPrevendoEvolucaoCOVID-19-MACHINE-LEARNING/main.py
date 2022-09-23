@@ -124,5 +124,44 @@ primeiro_dia = brasil.observationdate.loc[brasil.confirmed > 0].min()
 # y=tx_dia, title='Taxa de crescimento de casos confirmados no Brasil'))
 
 
+## Predições
+from statsmodels.tsa.seasonal import seasonal_decompose
+import matplotlib.pyplot as plt
+
+confirmados = brasil.confirmed
+confirmados.index = brasil.observationdate
+# print(confirmados)
+
+res = seasonal_decompose(confirmados)
+
+fix, (ax1, ax2, ax3, ax4) = plt.subplots(4, 1, figsize=(10,8))
+ax1.plot(res.observed)
+ax2.plot(res.trend)
+ax3.plot(res.seasonal)
+ax4.plot(confirmados.index, res.resid)
+ax4.axhline(0, linestyle='dashed', c='black')
+# plt.show() 
+
+
+
+### ARIMA # pip install pmdarima
+from pmdarima.arima import auto_arima
+modelo = auto_arima(confirmados)
+
+fig = go.Figure(go.Scatter(
+    x=confirmados.index, y=confirmados, name='Observados'
+))
+
+fig.add_trace(go.Scatter(
+    x=confirmados.index, y=modelo.predict_in_sample(), name='Preditos'
+))
+
+fig.add_trace(go.Scatter(
+    x=pd.date_range('2020-05-20', '2020-06-20'), y=modelo.predict(31), name='Forecast'
+))
+
+fig.update_layout(title='Previsão de casos confirmados no Brasil para os próximos 30 dias')
+# fig.show()
+
 
 
