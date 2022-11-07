@@ -1,0 +1,24 @@
+>>> AWS IAM
+
+Serviço para gerenciamento de usuários... assim limita funções para cada usuários... Cria um arquivo JSON com as permissões
+Recuperação de usuário você faz com um arquivo .CSV quando tens o primeiro acesso
+
+Conta usuário RAIZ na AWS possui acesso "MASTER" com controle sobre todos os recursos de uma conta AWS
+
+São servidores de baixa latência: Wave Length
+
+Não é boa prática de segurança usar conta raíz para desenvolvimento (obviamente)
+
+Nível mais baixo da hierarquia, determina se uma identidade pode ou não tomar uma ação sobre um recurso na AWS (Allow/Deny) = IAM Permissions
+
+Permitem especificar permissões para facilitar o gerenciamento das permissões de usuários = IAM User Groups
+
+Um -- IAM USER --  do IAM é uma entidade criada para representar a pessoa ou aplicação que o utiliza para interagir com os serviços da AWS e consiste de um nome e credenciais.
+
+OUTSPOTS são datacenters de terceiros onde possuem colocations de servidores AWS
+
+Policies : Podem ser do tipo inline ou managed
+
+Um IAM Identity: Fornece acesso a recursos de uma conta na AWS
+
+IAM Roles: Conjunto de permissões que determinam o nível de acesso de uma identidade aos serviços AWS.
