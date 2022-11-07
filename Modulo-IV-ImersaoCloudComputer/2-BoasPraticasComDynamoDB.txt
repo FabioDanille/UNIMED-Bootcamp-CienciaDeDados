@@ -1,0 +1,99 @@
+https://github.com/cassianobrexbit/dio-live-dynamodb
+
+DB Relacional x DB Não Relacional
+
+Banco de dados relacional é baseado no MODELO RELACIONAL de dados para representar os dados em tabelas e armazenam e fornecem acesso a ponto de dados relacionados entre si.
+Ex: Microsoft SQL Server, PostgreSQL, Oracle DB
+
+
+Banco de dados NÃO relacional é qualquer banco de dados que não segue o modelo relacional, é também conhecida como banco de dados NoSQL, onde os dados são armazenados no modelo PAR CHAVE/VALOR
+Ex: MongoDB, DynamoDB, Redis
+
+----------
+Introdução ao Dynamo
+
+Componentes:
+    * tabelas
+    * items
+    * atributos
+    * chave primária
+    * partition key
+    * partition key + sort key
+
+----------
+Componentes e Boas Práticas com DynamoDB
+
+Componentes:
+    * Índices secundários
+    * Índice secundário global
+    * Índice secundário local
+
+Tipos de Dados:
+    * Tipos escalares
+    * Documentos
+    * Tipos de conjunto
+
+Modos de leitura e Gravação
+    * Sob demanda
+    * Provisionado
+
+----------
+Pensando fora da caixa no DynamoDB
+
+Pontos a serem observados ao modelar um DynamoDB
+    *Access Patterns
+    * Exemplo de access patterns em um e-commerce
+    * Regra de negócio definida
+    * Dimensionamento
+    * Mantenha o número de índices no mínimo
+    * Design eficiente
+
+----------
+Mãos à obra: Observando a Arquitetura da prática
+
+
+----------
+Configurando o AWS e Criando uma Tabela
+
+
+aws dynamodb create-table \
+    --table-name Music \
+    --attribute-definitions \
+        AttributeName=Artist,AttributeType=S \
+        AttributeName=SongTitle,AttributeType=S \
+    --key-schema \
+        AttributeName=Artist,KeyType=HASH \
+        AttributeName=SongTitle,KeyType=RANGE \
+    --provisioned-throughput \
+        ReadCapacityUnits=10,WriteCapacityUnits=5
+
+
+----------
+Inserindo Itens na Tabela
+
+aws dynamodb put-item \
+    --table-name Music \
+    --item file://itemmusic.json \
+
+
+Inserindo Múltiplos itens na Tabela
+
+aws dynamodb batch-write-item \
+    --request-items file://batchmusic.json
+
+----------
+Criando Index
+
+aws dynamodb update-table \
+    --table-name Music \
+    --attribute-definitions AttributeName=AlbumTitle,AttributeType=S \
+    --global-secondary-index-updates \
+        "[{\"Create\":{\"IndexName\": \"AlbumTitle-index\",\"KeySchema\":[{\"AttributeName\":\"AlbumTitle\",\"KeyType\":\"HASH\"}], \
+        \"ProvisionedThroughput\": {\"ReadCapacityUnits\": 10, \"WriteCapacityUnits\": 5      },\"Projection\":{\"ProjectionType\":\"ALL\"}}}]"
+
+----------
+Finalizando Projeto
+
+----------
+Entendendo o Desafio
+
